@@ -1,0 +1,16 @@
+# Python
+__pycache_/
+*.py[cod]
+*.$py.class
+*.so
+venv/
+
+#VS Code
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vscode
+*.code-workspace
+

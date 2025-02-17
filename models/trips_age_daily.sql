@@ -7,4 +7,4 @@ from
     {{ ref("trips_users") }} 
 group by
     1,
-    2s
+    2

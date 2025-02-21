@@ -40,3 +40,15 @@ models:
     description: "Deduplicated events"
     config:
       materialized: "incremental" 
+  - name: "revenue_daily"
+    description: "Summary daily revenue"
+    config:
+      materialized: "incremental"
+      strategy: "merge"
+      unique_key: [ "date" ]
+  - name: "trips_concurrency"
+    description: "Number of simultaneous rides in time"
+    config:
+      materialized: "incremental"
+      
+      

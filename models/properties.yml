@@ -16,6 +16,10 @@ models:
     description: "Trips prepared for analysis"
     config:
       materialized: "view"
+  - name: "events_full"
+    description: "All events and description"
+    config:
+      materialized: "view"    
   - name: "trips_stat"
     description: "Overall trips statistics"
   - name: "trips_stat_daily"
@@ -54,10 +58,16 @@ models:
     description: "Scooter satistics by company"
   - name: "companies_trips"
     description: "Trip satistics by company"
+  - name: "events_stat"
+    description: "Overall user events statistics"
 
 seeds:
   - name: "scooters"
     description: "Scooter models info and statistics"
+    config:
+      delimiter: ","
+  - name: "event_types"
+    description: "Meaningful types of mobile app events"
     config:
       delimiter: ","
       

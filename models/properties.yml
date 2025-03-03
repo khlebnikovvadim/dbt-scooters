@@ -41,9 +41,11 @@ models:
     config:
       materialized: "incremental"
   - name: "events_clean"
-    description: "Deduplicated events"
+    description: "User events without duplicates"
     config:
-      materialized: "incremental" 
+      materialized: "incremental"
+      strategy: "merge"
+      unique_key: [ "user_id", "timestamp", "type_id" ]
   - name: "revenue_daily"
     description: "Summary daily revenue"
     config:

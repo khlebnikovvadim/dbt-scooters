@@ -53,3 +53,18 @@ create extension postgis schema public;
 ## Полезные макросы
 
 - `dbt run-operation create_role --args "name: finance"` - создание роли в базе (на примере роли "finance")
+...
+## Каталог данных
+
+Каталог dbt, который автоматически обновляется из ветки `main`:
+
+https://inzhenerka.github.io/dbt-scooters
+
+...
+
+Установите dbt и другие зависимости:
+   
+```bash
+pip install -r requirements.txt
+```
+...

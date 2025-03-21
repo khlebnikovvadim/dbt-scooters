@@ -24,6 +24,11 @@ models:
     data_tests:
       - unique_key:
           columns: [ "age" ]
+    columns:
+      - name: "age"
+        description: "Numerical age of user"
+        data_tests:
+          - "dbt_utils.not_constant"
 exposures:
   - name: "financial_dashboard"
     label: "Financial Dashboard"

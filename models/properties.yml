@@ -48,7 +48,11 @@ models:
   - name: "events_full"
     description: "All events and description"
     config:
-      materialized: "view"    
+      materialized: "view" 
+  - name: "events_stream"
+    description: "User events prepared for product analysis"
+    config:
+      materialized: "ephemeral"   
   - name: "trips_stat"
     description: "Overall trips statistics"
   - name: "trips_stat_daily"
@@ -107,12 +111,13 @@ models:
       - unique_key:
           columns: [ "age" ]
       - dbt_expectations.expect_table_column_count_to_equal:
-          value: 3
+          value: 4
     columns:
       - name: "age"
         description: "Numerical age of user"
         data_tests:
           - "dbt_utils.not_constant"
+   
 
 seeds:
   - name: "scooters"

@@ -27,7 +27,7 @@ models:
       +grants:
         select: [ "finance" ]
 seeds:
-  dbt_scooters:
+  dbt_scooterss:
     +persist_docs:
       relation: true
       columns: true

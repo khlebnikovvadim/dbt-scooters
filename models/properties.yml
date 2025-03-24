@@ -52,7 +52,7 @@ models:
   - name: "events_stream"
     description: "User events prepared for product analysis"
     config:
-      materialized: "ephemeral"   
+      materialized: "ephemeral"  
   - name: "trips_stat"
     description: "Overall trips statistics"
   - name: "trips_stat_daily"

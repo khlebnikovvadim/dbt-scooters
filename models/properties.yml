@@ -52,7 +52,16 @@ models:
   - name: "events_stream"
     description: "User events prepared for product analysis"
     config:
-      materialized: "ephemeral"  
+      materialized: "view"  
+  - name: "stream"
+    description: "User events prepared for p analysis"
+    config:
+      materialized: "view"
+  - name: "book_scooter_retention"
+    description: >
+      Retention analysis which tells how many people
+      started search for scooter and finally booked it on or after
+      1, 7, 14 days (or weeks, months, years), etc
   - name: "trips_stat"
     description: "Overall trips statistics"
   - name: "trips_stat_daily"

@@ -1,2 +1,3 @@
 dbt-core
 dbt-postgres
+dbt-metricflow==0.7.1

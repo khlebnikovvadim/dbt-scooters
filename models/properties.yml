@@ -126,6 +126,8 @@ models:
         description: "Numerical age of user"
         data_tests:
           - "dbt_utils.not_constant"
+  - name: "metricflow_time_spine"
+    description: "Time spine calendar for metricflow"  
    
 
 seeds:
@@ -162,5 +164,6 @@ seeds:
       - name: "age_end"
         description: "End age of group"
         data_tests: [ "unique_not_null" ]
+  
       
       

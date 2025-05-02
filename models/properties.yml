@@ -208,6 +208,23 @@ seeds:
       - name: "age_end"
         description: "End age of group"
         data_tests: [ "unique_not_null" ]
+  - name: "trips_age_sex_daily"
+    description: "Daily trips statistics by user age and gender"
+    data_tests:
+      - unique_key:
+          columns: [ "date", "age", "sex" ]
+
+  - name: "trips_age_sex_weekly"
+    description: "Weekly trips statistics by user age and gender"
+    data_tests:
+      - unique_key:
+          columns: [ "week", "age", "sex" ]
+
+  - name: "trips_age_sex_monthly"
+    description: "Monthly trips statistics by user age and gender"
+    data_tests:
+      - unique_key:
+          columns: [ "month", "age", "sex" ]
   
       
       

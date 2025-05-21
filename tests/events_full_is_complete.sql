@@ -1,11 +1,13 @@
 with source_cte as (
     select count(*) as row_count
-    from  {{ ref("events_clean") }}
+    from {{ ref("events_clean") }}
 ),
+
 target_cte as (
     select count(*) as row_count
-    from {{ ref("events_full") }} 
+    from {{ ref("events_full") }}
 )
+
 select
     'Row count mismatch' as error_message,
     source_cte.row_count as source_count,

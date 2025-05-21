@@ -1,5 +1,5 @@
 select
-  age,
+    age,
   {{ dbt_utils.pivot(
       'sex',
       dbt_utils.get_column_values(ref('trips_users'), 'sex')

@@ -1,6 +1,4 @@
-
-    select
-    *
+select *
 from
     {{ ref("revenue_monthly") }}
 where
@@ -10,4 +8,4 @@ where
     {%- else -%}
         and "month" = (select min("month") from {{ ref("revenue_monthly") }})
     {% endif -%}
-    and not(users < 100 or revenue_median < 50)
+    and not (users < 100 or revenue_median < 50)

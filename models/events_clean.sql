@@ -1,7 +1,7 @@
 {% set date = var("date", none) %}
 select distinct
     user_id,
-    "timestamp",
+    timestamp,
     type_id,
     {{ updated_at() }}
 from
@@ -11,7 +11,7 @@ where
         {% if date %}
         date("timestamp") = date '{{ date }}'
     {% else %}
-            "timestamp" > (select max("timestamp") from {{ this }})
+            timestamp > (select max(timestamp) from {{ this }})
         {% endif %}
     {% else %}
     "timestamp" < timestamp '2023-08-01'

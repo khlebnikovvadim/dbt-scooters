@@ -8,7 +8,7 @@ daily_stat_cte as (
         st_snaptogrid(
             st_makepoint(finish_lon, finish_lat), 0.001
         ) as destination,
-        "date",
+        date,
         count(
             case when extract(
                 hour from started_at at time zone 'Europe/Moscow'
@@ -29,10 +29,10 @@ weekly_stat_cte as (
     select
         user_id,
         destination,
-        date_trunc('week', "date") as "week",
+        date_trunc('week', date) as week,
         count(
             distinct
-            case when morning_trips > 0 then "date" end
+            case when morning_trips > 0 then date end
         ) as morning_trip_days
     from
         daily_stat_cte

@@ -7,7 +7,7 @@ select
         case
             when duration_s <> 0 then price_rub / duration_s * 60 else price_rub
         end
-    ) avg_price_rub_per_min
+    ) as avg_price_rub_per_min
 from
     {{ ref("trips_prep") }}
 group by

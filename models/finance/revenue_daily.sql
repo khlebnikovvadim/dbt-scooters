@@ -1,6 +1,6 @@
 select
     sum(price_rub) as revenue_rub,
-    "date",
+    date,
     {{ updated_at() }}
 from
     {{ ref("trips_prep") }}

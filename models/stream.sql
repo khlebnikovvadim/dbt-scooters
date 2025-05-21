@@ -1,5 +1,5 @@
 select
-    trim(type) event_type,
     user_id,
-    timestamp::date event_date
+    timestamp::date as event_date,
+    trim(type) as event_type
 from {{ ref("events_full") }}

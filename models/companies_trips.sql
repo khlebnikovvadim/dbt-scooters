@@ -1,6 +1,6 @@
 with trips_cte as (
     select
-        company,
+        s.company,
         count(*) as trips
     from
         {{ ref("trips_prep") }} as t
@@ -11,7 +11,7 @@ with trips_cte as (
 )
 
 select
-    company,
+    c.company,
     t.trips,
     c.scooters,
     t.trips / cast(c.scooters as float) as trips_per_scooter

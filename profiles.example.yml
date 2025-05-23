@@ -1,12 +1,21 @@
 dbt_scooterss:
   outputs:
     dev:
-      dbname: dev_suuw
-      host: dpg-cure0k9opnds73f1cd6g-a.frankfurt-postgres.render.com
+      dbname: dev_d1dp
+      host: dpg-d0ne7v9r0fns738uf9gg-a.frankfurt-postgres.render.com
+      pass: "{{ env_var('DBT_ENV_SECRET_PASSWORD') }}"
+      port: 5432
+      schema: dbt_dev
+      threads: 4
+      type: postgres
+      user: admin
+  target: dev
+    prod:
+      dbname: dev_d1dp
+      host: dpg-d0ne7v9r0fns738uf9gg-a.frankfurt-postgres.render.com
       pass: "{{ env_var('DBT_ENV_SECRET_PASSWORD') }}"
       port: 5432
       schema: dbt
       threads: 4
       type: postgres
       user: admin
-  target: dev

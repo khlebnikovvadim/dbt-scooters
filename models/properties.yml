@@ -128,13 +128,6 @@ models:
         - "analyze dbt.trips_users"
         - sql: "vacuum dbt.trips_users"
           transaction: false
-  - name: "users_class"
-    description: >
-      Combining all features into a consolidated table.
-      Joining with the users table to label each user
-    data_tests:
-      - unique_key:
-          columns: [ "user_id" ]
   - name: "events_clean"
     description: "User events without duplicates"
     config:

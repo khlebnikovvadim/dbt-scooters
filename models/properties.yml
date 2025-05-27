@@ -134,6 +134,17 @@ models:
       materialized: "incremental"
       strategy: "merge"
       unique_key: [ "user_id", "timestamp", "type_id" ]
+  - name: "events_prep"
+    description: "User events prepared for following processing"
+    config:
+      materialized: "view"
+    columns:
+      - name: "date"
+        description: |
+          Date of event derived from timestamp.
+          Imitates Hive-styled partitioning of events by date.
+          It is needed for efficient incremental processing by engines
+          with partitioning support (i.e. Trino).
   - name: "trips_concurrency"
     description: "Number of simultaneous rides in time"
     config:

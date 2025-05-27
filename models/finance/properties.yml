@@ -19,16 +19,7 @@ models:
     - name: "updated_at"
       description: "When row was updated last time"
       data_type: "timestamptz"
-    - name: "sex_age_pivot"
-    description: "Trips per age pivoted by sex"
-    data_tests:
-      - unique_key:
-          columns: [ "age" ]
-    columns:
-      - name: "age"
-        description: "Numerical age of user"
-        data_tests:
-          - "dbt_utils.not_constant"
+    
   - name: "revenue_user_monthly"
     description: "Monthly total revenue by user (ignoring free trips)"
     data_tests:
@@ -51,6 +42,8 @@ models:
     data_tests:
       - unique_key:
           columns: [ "month" ]
+  - name: "revenue_daily_stat"
+    description: "Overall daily revenue statistics"
 exposures:
   - name: "financial_dashboard"
     label: "Financial Dashboard"
